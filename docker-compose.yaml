@@ -1,7 +1,7 @@
 version: '3'
 services:
   postgres:
-    image: postgis/postgis:16-master
+    image: postgres:15-alpine
     # Required when running on platform other than amd64, like Apple M1/M2:
     # platform: linux/amd64
     volumes:
@@ -14,7 +14,7 @@ services:
       POSTGRES_DATABASE: medusa
 
   redis:
-    image: redis:7
+    image: redis:7-alpine
     ports:
       - 6379:6379
 
