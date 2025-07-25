@@ -46,6 +46,23 @@ module.exports = defineConfig({
         },
       },
     },
+    {
+      resolve: "@medusajs/medusa/payment",
+      options: {
+        providers: [
+          {
+            resolve: "medusa-payment-yookassa/providers/payment-yookassa",
+            id: "yookassa",
+            options: {
+              shopId: process.env.YOOKASSA_SHOP_ID,
+              secretKey: process.env.YOOKASSA_SECRET_KEY,
+              capture: true,
+              paymentDescription: "Test payment"
+            },
+          },
+        ],
+      },
+    },
   ],
 
 });
