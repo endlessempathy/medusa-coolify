@@ -33,7 +33,7 @@
     "@mikro-orm/postgresql": "6.4.3",
     "medusa-payment-yookassa": "^0.1.10",
     "awilix": "^8.0.1",
-    "pg": "^8.13.0"
+    "pg": "^8.16.3"
   },
   "devDependencies": {
     "@medusajs/test-utils": "2.8.8",
