@@ -45,7 +45,9 @@ COPY --from=builder /app/medusa/.medusa ./.medusa
 
 WORKDIR /app/medusa/.medusa/server
 
-RUN yarn install --production
+RUN yarn config set registry https://registry.npmmirror.com/ \
+ && yarn config set network-timeout 600000 \
+ && yarn install --production
 
 
 # RUN medusa migrations run 
