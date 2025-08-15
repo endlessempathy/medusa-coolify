@@ -8,7 +8,9 @@ RUN rm -rf node_modules
 
 RUN apt-get update && apt-get install -y python3 python3-pip python-is-python3
 
-RUN yarn install --loglevel=error
+RUN yarn config set registry https://registry.npmmirror.com/ \
+ && yarn config set network-timeout 600000 \
+ && yarn install --loglevel=error
 
 RUN yarn run build
 
